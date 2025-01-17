@@ -16,10 +16,8 @@ def show_im_buffer(image_buffer):
     )
     process.communicate(input=image_buffer)
 
-
 def show_im_path(image_path):
     subprocess.run(["kitten", "icat", image_path])
-
 
 def show_im(image):
     if isinstance(image, Image.Image):
@@ -32,7 +30,6 @@ def show_im(image):
         show_im_path(image)
         return
     raise NotImplementedError("Image format not supported.")
-
 
 def show_plot(fig):
     buffer = io.BytesIO()
